@@ -1,4 +1,4 @@
-# Malicious URL Detection using Bloom Filter (CS201 Project) (Group 231)
+# Malicious URL Detection using Bloom Filter (CS201 Project) (Group 31)
 
 This system leverages a Bloom filter to efficiently verify URLs against known malicious entries, using multiple hash functions—MurmurHash3, FNV-1a, DJB2, SDBM, and PJW. These hash functions set bits in a bit array, enabling quick detection ideal for real-time security. The URL database, stored in a CSV file named malicious_phish, is processed and saved in a compact binary format, facilitating high-speed lookups and allowing the system to manage extensive URL datasets effectively.
 
@@ -35,9 +35,10 @@ By integrating both the Bloom filter and Trie, this system balances the speed of
 
 ## Usage
 1. Run pre.c file first, which will create a binary file named abc.
-2. Run the main file which is bloom.c and continue entering urls from dataset.
-3. As a separate application run trie.c file.
-4. Input Pattern: The system accepts any URL for both Bloom filter and Trie-based checks, with -1 as the stop command. If the Trie identifies a pattern in the URL, it flags it as potentially malicious, adding depth to the detection process.
+2. Open the "malicious_phish" zip file. This was too large a file to be directly uploaded onto github. It is the main dataset. 
+3. Run the main file which is bloom.c and continue entering urls from dataset.
+4. As a separate application run trie.c file.
+5. Input Pattern: The system accepts any URL for both Bloom filter and Trie-based checks, with -1 as the stop command. If the Trie identifies a pattern in the URL, it flags it as potentially malicious, adding depth to the detection process.
 
 ---
 
