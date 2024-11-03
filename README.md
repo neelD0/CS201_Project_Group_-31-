@@ -23,7 +23,6 @@ In addition to the Bloom filter, a Trie (prefix tree) is used to store known mal
 
 **Pattern Detection with Trie**
 For each incoming URL, the Trie is searched for matching patterns. If a URL contains any of these harmful patterns, it is flagged as potentially malicious; otherwise, it is considered safe. This pattern-checking system complements the Bloom filter by adding an extra layer of precision, particularly for detecting URLs with common malicious patterns.
-
 By integrating both the Bloom filter and Trie, this system balances the speed of probabilistic detection with the accuracy of pattern-based filtering for robust URL security.
 ---
 
