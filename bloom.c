@@ -118,7 +118,9 @@ void trim_trailing_whitespace(char *str)
 }
 
 void calculate_false_positive_rate(const char *filename)
-{
+{    
+    printf("\n[INFO] False Positive: A benign (safe) URL is incorrectly flagged as malicious by the Bloom filter.\n");
+    printf("[INFO] True Negative: A benign (safe) URL is correctly identified as not malicious.\n\n");
     FILE *file = fopen(filename, "r");
     if (file == NULL)
     {
@@ -160,13 +162,17 @@ void calculate_false_positive_rate(const char *filename)
     fclose(file);
 
     double false_positive_rate = ((double)false_positives / (false_positives + true_negatives)) * 100;
+    printf("\nTesting on file: %s\n", filename);
     printf("False Positive Rate: %.6f\n", false_positive_rate);
     printf("Number of False Positives: %d\n", false_positives);
     printf("Number of True Negatives: %d\n", true_negatives);
 }
 
 void calculate_false_negative_rate(const char *filename)
-{
+{    
+    printf("\n[INFO] False Negative: A malicious URL is incorrectly flagged as safe by the Bloom filter.\n");
+    printf("[INFO] True Positive: A malicious URL is correctly identified as malicious.\n\n");
+    
     FILE *file = fopen(filename, "r");
     if (file == NULL)
     {
